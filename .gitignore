@@ -1,0 +1,3 @@
+virtualenvapp/
+.env
+node_modules/
