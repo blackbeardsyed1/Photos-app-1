@@ -13,6 +13,6 @@ router.get('/photos/user', authenticate, photoController.getUserPhotos);
 router.get('/photos/:photo_title', photoController.getDetails);
 router.post('/photos/:photo_title/comment', authenticate, photoController.addComment);
 router.post('/photos/:photo_title/rate', authenticate, photoController.addRating);
-router.get('/photos/search', photoController.search);
+router.get('/photos/search',authenticate, photoController.search);
 
 module.exports = router;
