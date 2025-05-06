@@ -139,6 +139,7 @@ exports.addRating = async (req, res) => {
 
 exports.search = async (req, res) => {
   const q = req.query.q;
+  console.log("Search query:", req.query.q);
   if (!q) return res.status(400).json({ error: 'Search query is required' });
 
   try {
@@ -151,7 +152,7 @@ exports.search = async (req, res) => {
         { username: regex }
       ]
     }, '-_id');
-
+    console.log(results);
     res.json(results);
   } catch (err) {
     res.status(500).json({ error: err.message });
