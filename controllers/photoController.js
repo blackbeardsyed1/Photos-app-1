@@ -39,6 +39,7 @@ exports.upload = async (req, res) => {
       }
     });
   } catch (err) {
+    console.error('Upload error:', err); // Add this
     res.status(500).json({ error: err.message });
   }
 };
